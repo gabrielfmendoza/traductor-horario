@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procesar Archivo Excel</title>
+    <link rel="stylesheet" href="./bootstrap.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar bg-primary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <span class="navbar-brand mb-0 h1">Analices de Excel Horarios</span>
+      </div>
+    </nav>
+    <div id="divisor" class="d-flex flex-md-row flex-column w-100">
+      <div id="excel" class="d-flex
+        flex-column justify-content-center align-items-center flex-fill w-100
+      ">
+        <form class="card" id="uploadForm">
+          <h5 class="card-header">Subir y procesar archivo Excel</h5>
+          <div class="card-body">
+            
+            <label for="file">Selecciona el archivo Excel:</label>
+            <input class="form-control"type="file" id="file" accept=".xlsx" required />
+            <button class="btn btn-primary w-100 mt-2" type="submit">Procesar</button>
+          </div>
+        </form>
+       
+      </div>
+      <div class="flex-fill">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Selector</th>
+                <th scope="col">Tipo</th>
+                <th scope="col">Entrada 1</th>
+                <th scope="col">Salida 1</th>
+                <th scope="col">Entrada 2</th>
+                <th scope="col">Salida 2</th>
+                
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" value="DEFAULT" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="DEFAULT" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="08:30" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="18:00" disabled/>
+                    </td>
+                    <td>
+
+                    </td>
+                    <td></td>
+                    <td></td>
+
+                </tr>
+                <tr>
+                    
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" value="ADMINISTRACION" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="grupo" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="08:30" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="13:00" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="14:00" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="18:00" disabled/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" value="TALLER" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="grupo" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="09:00" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="12:30" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="15:00" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="19:00" disabled/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" class="form-control" value="129" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="particular" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="08:30" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="12:30" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="15:30" disabled/>
+                    </td>
+                    <td>
+                        <input type="text" class="form-control" value="19:00" disabled/>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="app.js"></script>
+    <script>
+        const horarios = [
+    {
+        tipo: "particular",
+        selector: "129",
+        hora: { entrada1: "08:30", salida1: "12:30", entrada2: "15:30", salida2: "19:00" }
+    },
+    {
+        tipo: "grupo",
+        selector: "ADMINISTRACION",
+        hora: { entrada1: "08:30", salida1: "13:00", entrada2: "14:00", salida2: "18:00" }
+    },
+    {
+        tipo: "grupo",
+        selector: "TALLER",
+        hora: { entrada1: "09:00", salida1: "12:30", entrada2: "15:00", salida2: "19:00" }
+    },
+    {
+        tipo: "default",
+        selector: "DEFAULT",
+        hora: { entrada1: "08:30", salida1: "18:00" }  // Otros usuarios
+    }
+];
+    </script>
+  </body>
+</html>
